@@ -1,0 +1,22 @@
+<Page navigatingTo="onNavigatingTo" class="page">
+    <Page.actionBar>
+        <ActionBar title="My App">
+            <ActionItem tap="{{onDrawerButtonTap}}" text="תפריט" icon="res://ic_menu"></ActionItem>
+        </ActionBar>
+    </Page.actionBar>
+    <ScrollView>
+        <StackLayout class="m-15" orientation="vertical">
+            <GridLayout class="my-grid">
+                <ListView items="{{ posts }}" itemTap="{{ onItemTap }}">
+                    <ListView.itemTemplate>
+                        <StackLayout>
+                            <Label text="{{first_name + ' ' + last_name}}" textWrap="true" />
+                        </StackLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+            </GridLayout>
+            <Button text="Add" tap="{{ onAddTap}}" class="btn btn-primary btn-active" />
+        </StackLayout>
+    </ScrollView>
+
+</Page>
